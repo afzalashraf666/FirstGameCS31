@@ -25,10 +25,12 @@ namespace FirstGameCS31
 
             //Default left movement,if movement not specified
             GameObject newobj3 = gameFactory.CreateGameObject(enemy2, 4, ObjectsType.enemy);
+            CollisionDetection CDObject = new CollisionDetection(newobj, newobj3, new DecreaseHealth());
 
             game.addGameObject(newobj);
             game.addGameObject(newobj2);
             game.addGameObject(newobj3);
+            game.addCollision(CDObject);
         }
 
         private void mainTimer_Tick(object sender, EventArgs e)
